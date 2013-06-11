@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<dishes>
+    <dish>
+        <name>Тунец красный</name>
+        <image>tunez_krasnyj_b.jpg</image>
+        <description></description>
+        <price>14.95</price>
+        <weight>31</weight>
+        <category>Суши</category>
+    </dish>
+    <dish category="Суши">
+        <name>Лосось</name>
+        <image>losos_b.jpg</image>
+        <description></description>
+        <price>9.95</price>
+        <weight>31</weight>
+        <category>Суши</category>
+    </dish>
+    <dish>
+        <name>Угорь</name>
+        <image>ugor_b.jpg</image>
+        <description></description>
+        <price>15.95</price>
+        <weight>31</weight>
+        <category>Суши</category>
+    </dish>
+    <dish>
+        <name>Креветка тигровая</name>
+        <image>krevetka_tigrovaya_b.jpg</image>
+        <description></description>
+        <price>14.95</price>
+        <weight>32</weight>
+        <category>Суши</category>
+    </dish>
+    <dish>
+        <name>Икра красная</name>
+        <image>ikra_krasnaya_b.jpg</image>
+        <description></description>
+        <price>10.55</price>
+        <weight>25</weight>
+        <category>Суши</category>
+    </dish>
+    <dish>
+        <name>C лососем</name>
+        <image>s_lososem_b.jpg</image>
+        <description>лосось, васаби</description>
+        <price>24.95</price>
+        <weight>106</weight>
+        <category>Роллы</category>
+    </dish>
+    <dish>
+        <name>C тунцом</name>
+        <image>rulet_s_tuntsom_b.jpg</image>
+        <description>тунец, васаби</description>
+        <price>30.95</price>
+        <weight>106</weight>
+        <category>Роллы</category>
+    </dish>
+    <dish>
+        <name>Красное руно</name>
+        <image>krasnoe_runo_b.jpg</image>
+        <description>лосось, красная икра, авокадо, огурец</description>
+        <price>53.95</price>
+        <weight>201</weight>
+        <category>Роллы</category>
+    </dish>
+    <dish>
+        <name>C острым тунцом</name>
+        <image>s_ostrym_tuntsom_b.jpg</image>
+        <description>тунец, майонез, острый соус, огурец</description>
+        <price>38.95</price>
+        <weight>160</weight>
+        <category>Роллы</category>
+    </dish>
+</dishes>
+
+
+
+
+
+
+
+

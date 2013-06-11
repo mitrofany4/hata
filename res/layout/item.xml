@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent" android:background="@drawable/paper_1">
+    <RatingBar
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:id="@+id/ProductRatingBar"
+            style="@style/MyRatingBar"
+            android:layout_gravity="center" android:layout_margin="10dp"/>
+    <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="150dp"
+            android:id="@+id/ProductImageView" android:layout_gravity="center_horizontal" android:maxHeight="180dp"
+            android:padding="5dp"/>
+    <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Product Description"
+            android:layout_gravity="center" android:textColor="#130b70" android:gravity="center_horizontal"
+            android:textSize="14dp" android:id="@+id/DescriptionTextView" android:padding="5dp"/>
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" android:layout_gravity="right|center_vertical" android:gravity="right">
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/WeightTextView" android:gravity="center_vertical|right" android:textColor="#070707"
+                android:textSize="18dp" android:textStyle="bold" android:text="135 г." android:padding="4dp"/>
+    </LinearLayout>
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:layout_gravity="center_vertical"
+            >
+        <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:layout_weight="3">
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="New Text"
+                    android:id="@+id/ValueTextView" android:layout_gravity="right" android:textColor="#0000ff"
+                    android:textSize="20dp" android:layout_margin="10dp"/>
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="New Text4"
+                    android:id="@+id/PriceTextView" android:textSize="24dp"
+                    android:textColor="#ff101a" android:textStyle="bold" android:gravity="center_vertical|center_horizontal"
+                    android:layout_weight="4" android:layout_gravity="center_vertical|right"
+                    android:layout_margin="10dp"/>
+        </LinearLayout>
+        <com.example.hata.Wheel.WheelView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:width="50dp"
+                android:id="@+id/numberPicker"
+                android:gravity="right" android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp" android:layout_gravity="center" android:layout_weight="1"/>
+    </LinearLayout>
+    <Button
+            android:layout_width="240dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/button" android:layout_gravity="center" android:singleLine="false"
+            android:text="Добавить в корзину" android:textStyle="bold" android:textSize="18dp"
+            android:textColor="#066400" android:background="@drawable/square_white" android:layout_margin="20dp"/>
+</LinearLayout>

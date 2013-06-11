@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<com.example.hata.DashboardLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                  android:layout_width="fill_parent"
+                                  android:layout_height="fill_parent"
+                                  android:layout_weight="1">
+  <!-- Menu Button-->
+    <Button
+            android:id="@+id/menu_btn"
+            style="@style/DashboardButton"
+            android:drawableTop="@drawable/sushi"
+            android:text="@string/menu"
+            android:onClick="menu_button_Click"/>
+    <!-- Favorites Button-->
+    <Button
+            android:id="@+id/fav_btn"
+            style="@style/DashboardButton"
+            android:drawableTop="@drawable/favorites_90"
+            android:text="@string/favorites"
+            android:onClick="fav_button_Click"
+            />
+    <!-- Search Button-->
+    <Button
+            android:id="@+id/all_btn"
+            style="@style/DashboardButton"
+            android:drawableTop="@drawable/magnifying_glass"
+            android:text="@string/all"
+            android:onClick="all_button_Click"
+            />
+    <!-- Profile Button-->
+    <Button
+            android:id="@+id/profile_btn"
+            style="@style/DashboardButton"
+            android:drawableTop="@drawable/profile_picture"
+            android:text="@string/profile"
+            android:onClick="fav_button_Click"
+            />
+    <!-- News Button-->
+    <Button
+            android:id="@+id/news_btn"
+            style="@style/DashboardButton"
+            android:drawableTop="@drawable/latestnews"
+            android:text="@string/news"
+            />
+    <!-- Map Button-->
+    <Button  android:id="@+id/map_btn"
+             style="@style/DashboardButton"
+             android:drawableTop="@drawable/map"
+             android:text="@string/map"
+             android:onClick="restaurant_Click"/>
+
+</com.example.hata.DashboardLayout>

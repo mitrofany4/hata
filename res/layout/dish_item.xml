@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="horizontal"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+        <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:id="@+id/itemIV" android:layout_gravity="center_vertical|left"
+                    android:scaleType="fitCenter" android:layout_marginLeft="10dp" android:layout_marginTop="5dp"
+                    android:layout_alignParentLeft="true" android:layout_alignParentTop="false"
+                    android:layout_centerVertical="true"/>
+        <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/nameTV" android:clickable="false"
+                    android:layout_gravity="center_vertical|left"
+                    android:gravity="center_vertical|center_horizontal" android:textSize="18dp"
+                    android:layout_marginLeft="50dp" android:layout_alignParentLeft="true"
+                    android:layout_marginTop="5dp" android:layout_alignParentRight="false"
+                    android:layout_alignParentTop="false" android:layout_toRightOf="@+id/itemIV"
+                    android:layout_centerVertical="true"/>
+        <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/priceTV"
+                    android:layout_gravity="center_vertical|right"
+                    android:textColor="#2f36ff"
+                    android:textSize="20dp" android:layout_alignParentLeft="false"
+                    android:layout_alignParentTop="false" android:layout_marginTop="5dp"
+                    android:gravity="center_vertical|center_horizontal" android:layout_alignParentRight="true"
+                    android:layout_marginRight="5dp" android:layout_centerVertical="true"/>
+    </RelativeLayout>
+
+</LinearLayout>

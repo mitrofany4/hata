@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+        android:id="@+id/scroll">
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent" android:orientation="vertical"
+
+        >
+
+    <ImageView
+            android:layout_width="200dp"
+            android:layout_height="150dp"
+            android:id="@+id/rest_foto" android:layout_gravity="center"
+            android:cropToPadding="false" android:scaleType="fitXY" android:src="@drawable/hata_univer"
+            android:layout_marginTop="10dp"/>
+
+    <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="10dp">
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ул. Университетская, 33 "
+                android:id="@+id/addressTV" android:layout_gravity="center" android:textSize="20sp"
+                android:layout_margin="10dp" android:autoLink="map"
+                />
+
+        <ImageButton
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:id="@+id/mapIB"
+                android:background="@drawable/square_white"
+                android:src="@drawable/marker24"
+                android:onClick="OnMapButtonClick"/>
+    </LinearLayout>
+
+    <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:layout_margin="10dp" android:layout_gravity="center">
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/schedule"
+                android:id="@+id/schedule_titleTV" android:textSize="20sp"/>
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="с 10:00 до 23:00"
+                android:id="@+id/schedule_titleTV" android:textSize="18sp" android:layout_marginLeft="10dp"/>
+    </LinearLayout>
+
+    <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" android:layout_margin="5dp">
+
+        <ImageView
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:id="@+id/phoneIV"
+                android:layout_gravity="left|center_vertical"
+                android:layout_alignParentLeft="true" android:layout_centerVertical="true"
+                android:background="@drawable/black_phone_48" android:layout_marginLeft="20dp"/>
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:text="+38 (062) 388 55 53"
+                android:id="@+id/HomePhoneNumber" android:layout_gravity="center_vertical"
+                android:gravity="center_vertical" android:layout_toRightOf="@+id/phoneIV"
+                android:layout_marginLeft="20dp" android:autoLink="phone" android:textSize="20sp"
+                />
+        <ImageButton
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:id="@+id/HomeCallButton" android:background="@drawable/phone"
+                android:layout_alignParentRight="true" android:layout_centerVertical="true"
+                android:layout_marginRight="20dp"/>
+    </RelativeLayout>
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+                     android:layout_gravity="center" android:layout_margin="5dp">
+        <ImageView android:layout_width="48dp" android:layout_height="48dp" android:id="@+id/MTSIV"
+                   android:layout_gravity="left|center_vertical"
+                   android:layout_alignParentLeft="true"
+                   android:layout_centerVertical="true" android:background="@drawable/mts2"
+                   android:layout_marginLeft="20dp"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="48dp" android:text="+38 (062) 388 55 53"
+                  android:id="@+id/MTSPhoneNumber" android:layout_gravity="center_vertical"
+                  android:gravity="center_vertical" android:layout_toRightOf="@+id/MTSIV"
+                  android:autoText="false" android:autoLink="phone"
+                  android:layout_marginLeft="20dp" android:textSize="20sp"/>
+        <ImageButton android:layout_width="48dp" android:layout_height="48dp" android:id="@+id/MTSCallButton"
+                     android:background="@drawable/phone"
+                     android:layout_alignParentRight="true" android:layout_centerVertical="true"
+                     android:layout_marginRight="20dp"/>
+    </RelativeLayout>
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+                     android:layout_gravity="center" android:layout_margin="5dp">
+        <ImageView android:layout_width="48dp" android:layout_height="48dp" android:id="@+id/KyivstarIV"
+                   android:layout_gravity="left|center_vertical"
+                   android:layout_alignParentLeft="true"
+                   android:layout_centerVertical="true" android:background="@drawable/kyivstar"
+                   android:layout_marginLeft="20dp"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="48dp" android:text="+38 (062) 388 55 53"
+                  android:id="@+id/KyivstarHomeNumber" android:layout_gravity="center_vertical"
+                  android:gravity="center_vertical" android:layout_toRightOf="@+id/KyivstarIV"
+                  android:autoLink="phone" android:layout_marginLeft="20dp" android:textSize="20sp"/>
+        <ImageButton android:layout_width="48dp" android:layout_height="48dp" android:id="@+id/KyivstarCallButton"
+                     android:background="@drawable/phone"
+                     android:layout_alignParentRight="true" android:layout_centerVertical="true"
+                     android:layout_marginRight="20dp"/>
+    </RelativeLayout>
+    <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" android:layout_margin="5dp">
+        <ImageView
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:id="@+id/imageView" android:background="@drawable/email" android:layout_marginLeft="20dp"/>
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="info@yaponahata.in.ua"
+                android:id="@+id/emailTV" android:layout_gravity="center" android:autoLink="email"
+                android:textSize="20sp" android:layout_marginLeft="20dp"/>
+    </LinearLayout>
+
+</LinearLayout>
+
+</ScrollView>
