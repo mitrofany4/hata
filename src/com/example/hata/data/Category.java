@@ -1,4 +1,4 @@
-package com.example.hata;
+package com.example.hata.data;
 
 /**
  * Created with IntelliJ IDEA.

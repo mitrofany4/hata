@@ -1,6 +1,5 @@
-package com.example.hata;
+package com.example.hata.data;
 
-import android.content.Context;
 import android.graphics.Bitmap;
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -24,6 +23,15 @@ public class Dish implements Parcelable{
     private int cat_id;
     private String category;
     private Boolean isFavorite=false;
+    private int count;
+
+    public int getCount() {
+        return count;
+    }
+
+    public void setCount(int count) {
+        this.count = count;
+    }
 
     public Boolean getFavorite() {
         return isFavorite;

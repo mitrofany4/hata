@@ -8,7 +8,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 import com.example.hata.DBAdapter;
-import com.example.hata.Dish;
+import com.example.hata.data.Dish;
 import com.example.hata.R;
 import org.xml.sax.InputSource;
 import org.xml.sax.XMLReader;

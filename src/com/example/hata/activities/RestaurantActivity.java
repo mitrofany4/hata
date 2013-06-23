@@ -1,4 +1,4 @@
-package com.example.hata;
+package com.example.hata.activities;
 
 import android.content.ContentResolver;
 import android.content.Intent;
@@ -6,10 +6,10 @@ import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
-import android.widget.Toast;
 import com.actionbarsherlock.app.ActionBar;
 import com.actionbarsherlock.app.SherlockActivity;
 import com.actionbarsherlock.view.MenuItem;
+import com.example.hata.R;
 
 /**
  * Created by Максим on 21.05.13.

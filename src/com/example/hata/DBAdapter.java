@@ -9,6 +9,8 @@ import android.database.sqlite.SQLiteException;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.util.Log;
+import com.example.hata.data.Category;
+import com.example.hata.data.Dish;
 
 import java.io.IOException;
 import java.io.InputStream;

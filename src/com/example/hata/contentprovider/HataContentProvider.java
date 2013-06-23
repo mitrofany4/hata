@@ -12,6 +12,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteQueryBuilder;
 import android.net.Uri;
 import android.util.Log;
+import com.example.hata.data.Dish;
 import org.xml.sax.InputSource;
 import org.xml.sax.XMLReader;
 
@@ -32,7 +33,7 @@ public class HataContentProvider extends ContentProvider {
     private HataDatabase hataDb;
     private ContentResolver contentResolver;
     private AssetManager assetManager;
-    private ArrayList<com.example.hata.Dish> disheslist;
+    private ArrayList<Dish> disheslist;
     private SQLiteDatabase db;
     @Override
     public boolean onCreate() {

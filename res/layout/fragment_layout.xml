@@ -33,7 +33,7 @@
             style="@style/DashboardButton"
             android:drawableTop="@drawable/profile_picture"
             android:text="@string/profile"
-            android:onClick="fav_button_Click"
+            android:onClick="profile_Click"
             />
     <!-- News Button-->
     <Button

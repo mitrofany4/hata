@@ -1,4 +1,4 @@
-package com.example.hata;
+package com.example.hata.activities;
 
 import android.content.Intent;
 import android.graphics.Typeface;
@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.Button;
 import com.actionbarsherlock.app.ActionBar;
 import com.actionbarsherlock.app.SherlockActivity;
+import com.example.hata.R;
+
 
 public class MainActivity extends SherlockActivity {
     /**
@@ -16,6 +18,8 @@ public class MainActivity extends SherlockActivity {
     Button menu_button,fav_button, mapIB, newsIB, smileIB;
     public Typeface tf;
     ActionBar actionBar;
+    Button profile_button;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);    //To change body of overridden methods use File | Settings | File Templates.
@@ -30,6 +34,7 @@ public class MainActivity extends SherlockActivity {
         fav_button = (Button) findViewById(R.id.fav_btn);
         newsIB = (Button) findViewById(R.id.news_btn);
         mapIB = (Button) findViewById(R.id.map_btn);
+        profile_button = (Button) findViewById(R.id.profile_btn);
 //        smileIB = (Button) findViewById(R.id.feeds_btn);
 
 //        actionBar = getSupportActionBar();
@@ -42,6 +47,13 @@ public class MainActivity extends SherlockActivity {
     public void menu_button_Click(View v) {
 
         Intent  intent = new Intent(getApplicationContext(), MenuActivity.class);
+        startActivity(intent);
+
+    }
+
+    public void profile_Click(View v) {
+
+        Intent  intent = new Intent(getApplicationContext(), ProfileActivity.class);
         startActivity(intent);
 
     }

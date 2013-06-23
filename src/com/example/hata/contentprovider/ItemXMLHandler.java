@@ -1,7 +1,7 @@
 package com.example.hata.contentprovider;
 
 
-import com.example.hata.Dish;
+import com.example.hata.data.Dish;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;

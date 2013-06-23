@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../../Libraries/Android-VKontakte-SDK/AndroidVkSdk/AndroidVkSdk.iml" filepath="$PROJECT_DIR$/../../Libraries/Android-VKontakte-SDK/AndroidVkSdk/AndroidVkSdk.iml" />
       <module fileurl="file://C:/Program Files (x86)/Android/JakeWharton-ActionBarSherlock-071a61c/actionbarsherlock/actionbarsherlock.iml" filepath="C:/Program Files (x86)/Android/JakeWharton-ActionBarSherlock-071a61c/actionbarsherlock/actionbarsherlock.iml" />
       <module fileurl="file://$APPLICATION_HOME_DIR$/sdk/extras/google/google_play_services/libproject/google-play-services_lib/google-play-services_lib.iml" filepath="$APPLICATION_HOME_DIR$/sdk/extras/google/google_play_services/libproject/google-play-services_lib/google-play-services_lib.iml" />
       <module fileurl="file://$PROJECT_DIR$/hata.iml" filepath="$PROJECT_DIR$/hata.iml" />

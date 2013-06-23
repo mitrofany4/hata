@@ -9,6 +9,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.*;
 import android.widget.Filter;
+import com.example.hata.activities.ProductActivity;
+import com.example.hata.data.Dish;
 
 import java.util.ArrayList;
 import java.util.List;

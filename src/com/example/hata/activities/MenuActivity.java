@@ -1,4 +1,4 @@
-package com.example.hata;
+package com.example.hata.activities;
 
 
 import android.content.Intent;
@@ -11,6 +11,8 @@ import com.actionbarsherlock.app.ActionBar;
 import com.actionbarsherlock.app.SherlockActivity;
 import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuItem;
+import com.example.hata.activities.DishesActivity;
+import com.example.hata.R;
 
 
 /**

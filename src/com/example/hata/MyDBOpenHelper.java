@@ -8,6 +8,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 import com.example.hata.contentprovider.ItemXMLHandler;
+import com.example.hata.data.Dish;
 import org.xml.sax.InputSource;
 import org.xml.sax.XMLReader;
 import javax.xml.parsers.SAXParser;

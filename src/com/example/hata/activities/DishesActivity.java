@@ -1,4 +1,4 @@
-package com.example.hata;
+package com.example.hata.activities;
 
 
 import android.content.ContentResolver;
@@ -15,7 +15,10 @@ import com.actionbarsherlock.app.SherlockActivity;
 import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuItem;
 import com.actionbarsherlock.view.Window;
+import com.example.hata.MenuItemAdapter;
+import com.example.hata.R;
 import com.example.hata.contentprovider.ContentDescriptor;
+import com.example.hata.data.Dish;
 
 import java.util.ArrayList;
 

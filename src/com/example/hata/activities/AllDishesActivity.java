@@ -1,4 +1,4 @@
-package com.example.hata;
+package com.example.hata.activities;
 
 import android.database.Cursor;
 import android.graphics.Bitmap;
@@ -13,6 +13,10 @@ import com.actionbarsherlock.app.ActionBar;
 import com.actionbarsherlock.app.SherlockActivity;
 import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuItem;
+import com.example.hata.DBAdapter;
+import com.example.hata.MenuItemAdapter;
+import com.example.hata.R;
+import com.example.hata.data.Dish;
 
 import java.util.ArrayList;
 
