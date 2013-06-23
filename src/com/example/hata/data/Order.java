@@ -7,19 +7,27 @@ import java.util.ArrayList;
  */
 public class Order {
 
-
     private long id;
-    private ArrayList<Dish> items;
+    private ArrayList<Dish> items = new ArrayList<Dish>();
     private String date;
     private String time;
     private double bill;
     private int discount;
+    private String client;
 
-    public Order(long id, ArrayList<Dish> items, String time, String date, int discount) {
+    public String getClient() {
+        return client;
+    }
+
+    public void setClient(String client) {
+        this.client = client;
+    }
+
+    public Order(long id,String client, ArrayList<Dish> _items, String time, String date, int discount) {
         this.discount = discount;
         this.time = time;
         this.date = date;
-        this.items = items;
+        this.items = _items;
         this.id = id;
         int sum =0;
 
