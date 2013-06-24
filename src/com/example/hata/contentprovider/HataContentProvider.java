@@ -79,6 +79,25 @@ public class HataContentProvider extends ContentProvider {
                 return cursor;
             }
 
+            // retrieve restaurants list
+            case ContentDescriptor.Restaurant.PATH_TOKEN:{
+
+                builder.setTables(ContentDescriptor.Restaurant.NAME);
+                cursor = builder.query(db, projection, selection, selectionArgs, null, null, sortOrder);
+                cursor.setNotificationUri(getContext().getContentResolver(), uri);
+                return cursor;
+            }
+
+            // retrieve restaurants list
+            case ContentDescriptor.Restaurant.PATH_FOR_ID_TOKEN:{
+
+                builder.setTables(ContentDescriptor.Restaurant.NAME);
+                builder.appendWhere(ContentDescriptor.Restaurant.Cols.ID + "=" + uri.getLastPathSegment());
+                cursor = builder.query(db, projection, selection, selectionArgs, null, null, sortOrder);
+                cursor.setNotificationUri(getContext().getContentResolver(), uri);
+                return cursor;
+            }
+
             default: return null;
         }
     }

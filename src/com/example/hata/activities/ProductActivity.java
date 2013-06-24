@@ -16,6 +16,7 @@ import com.example.hata.Wheel.OnWheelChangedListener;
 import com.example.hata.Wheel.OnWheelScrollListener;
 import com.example.hata.Wheel.WheelView;
 import com.example.hata.data.Dish;
+import com.example.hata.hataApp;
 
 import static android.view.View.OnClickListener;
 import static com.example.hata.DBAdapter.getBitmapFromAsset;
@@ -29,7 +30,17 @@ import static com.example.hata.MenuItemAdapter.fmt;
  * To change this template use File | Settings | File Templates.
  */
 public class ProductActivity extends SherlockActivity {
-    private Dish product;
+    final ImageView ProductIV = (ImageView) findViewById(R.id.ProductImageView);
+    final TextView DescriptionTV = (TextView) findViewById(R.id.DescriptionTextView);
+    final TextView PriceTV = (TextView) findViewById(R.id.PriceTextView);
+    final TextView WeightTV = (TextView) findViewById(R.id.WeightTextView);
+    //        final TextView name = (TextView) findViewById(R.id.nameTV);
+    final Button button = (Button) findViewById(R.id.button);
+    final TextView value = (TextView) findViewById(R.id.ValueTextView);
+    final WheelView count = (WheelView) findViewById(R.id.numberPicker);
+
+
+    private Dish product = new Dish();
 
     Double curent_price;
     // Number changed flag
@@ -37,14 +48,16 @@ public class ProductActivity extends SherlockActivity {
 
     // Number scrolled flag
     private boolean pickerScrolled = false;
+    private ActionBar actionBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);    //To change body of overridden methods use File | Settings | File Templates.
-  /**
+
+ /**
    *    Get item
   */
-        product = (Dish) getIntent().getParcelableExtra("product");
+//        product = (Dish) getIntent().getParcelableExtra("product");
 
         curent_price=product.getPrice();
 
@@ -53,13 +66,7 @@ public class ProductActivity extends SherlockActivity {
   * */
 
         setContentView(R.layout.item);
-        final ImageView ProductIV = (ImageView) findViewById(R.id.ProductImageView);
-        final TextView DescriptionTV = (TextView) findViewById(R.id.DescriptionTextView);
-        final TextView PriceTV = (TextView) findViewById(R.id.PriceTextView);
-        final TextView WeightTV = (TextView) findViewById(R.id.WeightTextView);
-//        final TextView name = (TextView) findViewById(R.id.nameTV);
-        final Button button = (Button) findViewById(R.id.button);
-        final TextView value = (TextView) findViewById(R.id.ValueTextView);
+
 /*****************************
  *         Name
  *****************************/
@@ -92,7 +99,7 @@ public class ProductActivity extends SherlockActivity {
 /*******************************
 *         NumberPicker
 ********************************/
-        final WheelView count = (WheelView) findViewById(R.id.numberPicker);
+
         count.setViewAdapter(new NumericWheelAdapter(this,1,20,"%02d"));
         count.setCyclic(true);
 
@@ -169,17 +176,21 @@ public class ProductActivity extends SherlockActivity {
             //To change body of implemented methods use File | Settings | File Templates.
 //            TODO: send object to Cart
 
-            Toast toast = Toast.makeText(ProductActivity.this,"Button pressed. Send object to Cart "+product.getName(),Toast.LENGTH_LONG);
+            product.setCount(count.getCurrentItem()+1);
+            hataApp apphata = ((hataApp)getApplicationContext());
+            apphata.addItem(product);
+            Toast toast = Toast.makeText(ProductActivity.this,product.getName() + " добавлено в корзину",Toast.LENGTH_LONG);
             toast.setGravity(Gravity.CENTER, 0, 0);
             toast.show();
+            finish();
         }
     };
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
 
-        menu.add("Cart")
-                .setIcon(R.drawable.cartred_48)
+        menu.add(0,2,1,"Favorites")
+                .setIcon(R.drawable.favorites_redheart)
                 .setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM);
         return true;
     }
@@ -189,10 +200,11 @@ public class ProductActivity extends SherlockActivity {
         int itemId = item.getItemId();
         switch (itemId) {
             case android.R.id.home:
-                Toast.makeText(this, "home pressed", Toast.LENGTH_LONG).show();
+
                 finish();
                 break;
-
+            case 2:
+                Toast.makeText(this, "like pressed", Toast.LENGTH_SHORT).show();
 
         }
 

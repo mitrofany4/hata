@@ -50,7 +50,7 @@ public class DishesActivity extends SherlockActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);    //To change body of overridden methods use File | Settings | File Templates.
-        requestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS);
+//        requestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS);
 
         setContentView(R.layout.dishes);
         contentResolver = getContentResolver();
@@ -63,7 +63,7 @@ public class DishesActivity extends SherlockActivity {
 
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setDisplayUseLogoEnabled(false);
-        setSupportProgressBarIndeterminateVisibility(true);
+//        setSupportProgressBarIndeterminateVisibility(true);
 
         populateDishesList(cat_name);
     }
@@ -106,15 +106,10 @@ public class DishesActivity extends SherlockActivity {
     }
 
     public Cursor getDishesByCategory(String _cat){
-/*        String[] projection = {
-                ContentDescriptor.Dish.Cols.ID,
-                ContentDescriptor.Dish.Cols.NAME,
-                ContentDescriptor.Dish.Cols.PRICE,
-                ContentDescriptor.Dish.Cols.FAV
-        };*/
+
         selectionArgs = new String[]{ _cat };
         String where = ContentDescriptor.Dish.Cols.CATEGORY + " = ?";
-        Cursor c = getContentResolver().query(ContentDescriptor.Dish.CONTENT_URI,projection, where, selectionArgs, null);
+        Cursor c = getContentResolver().query(ContentDescriptor.Dish.CONTENT_URI,null, where, selectionArgs, null);
         return c;
     }
 

@@ -45,7 +45,8 @@ public class ProfileActivity extends SherlockActivity {
     private ImageView photo;
     Account account=new Account();
     Api api;
-
+    private ImageButton myprofile;
+    private ImageButton myorders;
 
 
     @Override
@@ -80,6 +81,9 @@ public class ProfileActivity extends SherlockActivity {
         authorizeButton.setOnClickListener(authorizeClick);
         logoutButton.setOnClickListener(logoutClick);
         photo = (ImageView) findViewById(R.id.photo);
+        myprofile = (ImageButton) findViewById(R.id.myprofile);
+        myorders = (ImageButton) findViewById(R.id.myorders);
+        myprofile.setOnClickListener(myprofileClick);
     }
     
     private OnClickListener authorizeClick=new OnClickListener(){
@@ -95,6 +99,14 @@ public class ProfileActivity extends SherlockActivity {
             logOut();
         }
     };
+    private OnClickListener myprofileClick=new OnClickListener(){
+        @Override
+        public void onClick(View v) {
+            Intent intent = new Intent(ProfileActivity.this, EditProfileActivity.class);
+            startActivity(intent);
+        }
+    };
+
 
     private void startLoginActivity() {
         Intent intent = new Intent();
@@ -134,12 +146,15 @@ public class ProfileActivity extends SherlockActivity {
             logoutButton.setVisibility(View.VISIBLE);
             greetings.setVisibility(View.VISIBLE);
             photo.setVisibility(View.VISIBLE);
+            myprofile.setVisibility(View.VISIBLE);
+            myorders.setVisibility(View.VISIBLE);
         }else{
             authorizeButton.setVisibility(View.VISIBLE);
             logoutButton.setVisibility(View.GONE);
             greetings.setVisibility(View.GONE);
             photo.setVisibility(View.GONE);
-
+            myprofile.setVisibility(View.GONE);
+            myorders.setVisibility(View.GONE);
         }
     }
 

@@ -20,11 +20,21 @@ public class Customer {
     int sex;
     String bdate;
     String city;
-    String contects;
+    String contacts;
     Bitmap photo;
     String phone;
     String email;
     String address;
+    Double cash;
+    long card;
+
+    public Double getCash() {
+        return cash;
+    }
+
+    public void setCash(Double cash) {
+        this.cash = cash;
+    }
 
     public Customer(long vk_uid, String firstname, String lastname) {
         this.vk_uid = vk_uid;
@@ -110,12 +120,12 @@ public class Customer {
         this.city = city;
     }
 
-    public String getContects() {
-        return contects;
+    public String getContacts() {
+        return contacts;
     }
 
-    public void setContects(String contects) {
-        this.contects = contects;
+    public void setContacts(String contacts) {
+        this.contacts = contacts;
     }
 
     public Bitmap getPhoto() {

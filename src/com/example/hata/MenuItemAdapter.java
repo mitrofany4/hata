@@ -128,7 +128,7 @@ public class MenuItemAdapter extends ArrayAdapter<Dish> implements Filterable {
     private void OpenProductActivity(int position){
         Dish cur_item = items.get(position);
         Intent intent = new Intent(context, ProductActivity.class);
-        intent.putExtra("product", cur_item);
+//        intent.putExtra("product", cur_item);
         context.startActivity(intent);
     }
 

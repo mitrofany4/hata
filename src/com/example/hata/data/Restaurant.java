@@ -1,5 +1,7 @@
 package com.example.hata.data;
 
+import android.graphics.Bitmap;
+
 /**
  * Created by Максим on 27.05.13.
  */
@@ -16,7 +18,7 @@ public class Restaurant {
     private String phone2;
     private String phone3;
     private String schedule;
-    private String image;
+    private Bitmap image;
 
     @Override
     public String toString() {
@@ -34,7 +36,7 @@ public class Restaurant {
         this.name = name;
     }
 
-    public Restaurant(long id, String address, double longitude, double latitude, String city, String name, String description, String email, String phone1, String phone2, String phone3, String schedule, String image) {
+    public Restaurant(long id, String address, double longitude, double latitude, String city, String name, String description, String email, String phone1, String phone2, String phone3, String schedule, Bitmap image) {
 
         this.id = id;
         this.address = address;
@@ -139,11 +141,11 @@ public class Restaurant {
         this.schedule = schedule;
     }
 
-    public String getImage() {
+    public Bitmap getImage() {
         return image;
     }
 
-    public void setImage(String image) {
+    public void setImage(Bitmap image) {
         this.image = image;
     }
 

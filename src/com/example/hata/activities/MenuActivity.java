@@ -70,27 +70,13 @@ public class MenuActivity extends SherlockActivity {
 
     }
 
-
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-
-        menu.add("Cart")
-                .setIcon(R.drawable.cartgreen_48)
-                .setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM);
-        return true;
-    }
-
     @Override
     public boolean onMenuItemSelected(int featureId, MenuItem item) {
         int itemId = item.getItemId();
         switch (itemId) {
             case android.R.id.home:
-                Toast.makeText(this, "home pressed", Toast.LENGTH_LONG).show();
                 finish();
                 break;
-
-
         }
 
         return true;

@@ -74,7 +74,7 @@ public class MainActivity extends SherlockActivity {
     }
 
     public void restaurant_Click(View v){
-        Intent  intent = new Intent(getApplicationContext(), RestaurantActivity.class);
+        Intent  intent = new Intent(getApplicationContext(), RestaurantsActivity.class);
         startActivity(intent);
 
     }
