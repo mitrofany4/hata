@@ -8,14 +8,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.*;
-import android.widget.Filter;
 import com.example.hata.activities.ProductActivity;
 import com.example.hata.data.Dish;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class MenuItemAdapter extends ArrayAdapter<Dish> implements Filterable {
+public class CartItemAdapter extends ArrayAdapter<Dish> implements Filterable {
     private int resource;
     private final Activity context;
     private List<Dish> items;
@@ -25,7 +24,7 @@ public class MenuItemAdapter extends ArrayAdapter<Dish> implements Filterable {
     private int position;
     DishFilter dishFilter;
 
-    public MenuItemAdapter(Activity _context, int _resource, List<Dish> _items) {
+    public CartItemAdapter(Activity _context, int _resource, List<Dish> _items) {
         super(_context, _resource, _items);
         resource=_resource;
         this.context = _context;
@@ -38,6 +37,7 @@ public class MenuItemAdapter extends ArrayAdapter<Dish> implements Filterable {
         TextView name;
         TextView price;
         ImageView icon;
+        ImageView delete;
     }
 
     public static String fmt(double d)
@@ -58,16 +58,17 @@ public class MenuItemAdapter extends ArrayAdapter<Dish> implements Filterable {
         String name = item.getName();
         double price = item.getPrice();
         Bitmap icon = item.getImage_bmp();
+        int count = item.getCount();
 
 
         if (rowView == null) {
             LayoutInflater inflater = context.getLayoutInflater();
-            rowView = inflater.inflate(R.layout.dish_item, null);
+            rowView = inflater.inflate(R.layout.cart_item, null);
             holder = new ViewHolder();
             holder.name = (TextView) rowView.findViewById(R.id.nameTV);
             holder.price = (TextView) rowView.findViewById(R.id.priceTV);
             holder.icon = (ImageView) rowView.findViewById(R.id.itemIV);
-
+            holder.delete = (ImageView) rowView.findViewById(R.id.delIV);
             rowView.setTag(holder);
 
         }  else {
@@ -109,7 +110,7 @@ public class MenuItemAdapter extends ArrayAdapter<Dish> implements Filterable {
 //      holder.price.setTypeface(font);
         holder.name.setText(name);
         holder.icon.setImageBitmap(icon);
-        String s = fmt(price);
+        String s = Integer.toString(count)+" x "+fmt(price);
         holder.price.setText(s);
 
       return rowView;
@@ -127,6 +128,7 @@ public class MenuItemAdapter extends ArrayAdapter<Dish> implements Filterable {
 
     private void OpenProductActivity(int position){
         Dish cur_item = items.get(position);
+
         Intent intent = new Intent(context, ProductActivity.class);
        intent.putExtra("product", cur_item);
         context.startActivity(intent);

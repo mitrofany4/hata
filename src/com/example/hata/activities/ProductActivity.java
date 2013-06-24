@@ -1,5 +1,6 @@
 package com.example.hata.activities;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.view.Gravity;
@@ -30,16 +31,10 @@ import static com.example.hata.MenuItemAdapter.fmt;
  * To change this template use File | Settings | File Templates.
  */
 public class ProductActivity extends SherlockActivity {
-    final ImageView ProductIV = (ImageView) findViewById(R.id.ProductImageView);
-    final TextView DescriptionTV = (TextView) findViewById(R.id.DescriptionTextView);
-    final TextView PriceTV = (TextView) findViewById(R.id.PriceTextView);
-    final TextView WeightTV = (TextView) findViewById(R.id.WeightTextView);
-    //        final TextView name = (TextView) findViewById(R.id.nameTV);
-    final Button button = (Button) findViewById(R.id.button);
-    final TextView value = (TextView) findViewById(R.id.ValueTextView);
-    final WheelView count = (WheelView) findViewById(R.id.numberPicker);
 
 
+
+    int counter;
     private Dish product = new Dish();
 
     Double curent_price;
@@ -54,10 +49,20 @@ public class ProductActivity extends SherlockActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);    //To change body of overridden methods use File | Settings | File Templates.
 
+        setContentView(R.layout.item);
+
+        ImageView ProductIV = (ImageView) findViewById(R.id.ProductImageView);
+        TextView DescriptionTV = (TextView) findViewById(R.id.DescriptionTextView);
+        final TextView PriceTV = (TextView) findViewById(R.id.PriceTextView);
+        TextView WeightTV = (TextView) findViewById(R.id.WeightTextView);
+        Button button = (Button) findViewById(R.id.button);
+        final TextView value = (TextView) findViewById(R.id.ValueTextView);
+        final WheelView count = (WheelView) findViewById(R.id.numberPicker);
+
  /**
    *    Get item
   */
-//        product = (Dish) getIntent().getParcelableExtra("product");
+       product = (Dish) getIntent().getParcelableExtra("product");
 
         curent_price=product.getPrice();
 
@@ -65,7 +70,6 @@ public class ProductActivity extends SherlockActivity {
   *     Set layout
   * */
 
-        setContentView(R.layout.item);
 
 /*****************************
  *         Name
@@ -111,6 +115,7 @@ public class ProductActivity extends SherlockActivity {
                     value.setText(String.valueOf(count.getCurrentItem()+1)+" x "+fmt(product.getPrice()));
                     PriceTV.setText(fmt(curent_price));
                     pickerChanged = false;
+                    counter=count.getCurrentItem()+1;
                 }
             }
         };
@@ -127,6 +132,7 @@ public class ProductActivity extends SherlockActivity {
                 value.setText(String.valueOf(count.getCurrentItem()+1)+" x "+fmt(product.getPrice()));
                 PriceTV.setText(fmt(curent_price));
                 pickerChanged = false;
+                counter=count.getCurrentItem()+1;
             }
         };
 
@@ -176,20 +182,22 @@ public class ProductActivity extends SherlockActivity {
             //To change body of implemented methods use File | Settings | File Templates.
 //            TODO: send object to Cart
 
-            product.setCount(count.getCurrentItem()+1);
+            product.setCount(counter);
             hataApp apphata = ((hataApp)getApplicationContext());
             apphata.addItem(product);
             Toast toast = Toast.makeText(ProductActivity.this,product.getName() + " добавлено в корзину",Toast.LENGTH_LONG);
             toast.setGravity(Gravity.CENTER, 0, 0);
             toast.show();
-            finish();
+            Intent intent = new Intent(ProductActivity.this, CartActivity.class);
+            startActivity(intent);
+//            finish();
         }
     };
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
 
-        menu.add(0,2,1,"Favorites")
+        menu.add(0,2,0,"Favorites")
                 .setIcon(R.drawable.favorites_redheart)
                 .setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM);
         return true;
@@ -204,7 +212,8 @@ public class ProductActivity extends SherlockActivity {
                 finish();
                 break;
             case 2:
-                Toast.makeText(this, "like pressed", Toast.LENGTH_SHORT).show();
+
+                Toast.makeText(this, "Блюдо добавлено в избранное", Toast.LENGTH_SHORT).show();
 
         }
 

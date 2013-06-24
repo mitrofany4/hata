@@ -70,6 +70,8 @@
         <activity android:name=".activities.ProfileActivity"/>
         <activity android:name=".activities.EditProfileActivity"/>
         <activity android:name=".activities.RestaurantsActivity"/>
+        <activity android:name=".activities.CartActivity"
+                />
 
     </application>
 </manifest> 

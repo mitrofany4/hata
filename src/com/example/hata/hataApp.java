@@ -1,6 +1,9 @@
 package com.example.hata;
 
 import android.app.Application;
+import android.content.Context;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import com.example.hata.data.Dish;
 
 import java.util.ArrayList;
@@ -13,6 +16,19 @@ public class hataApp extends Application {
     private ArrayList <Dish> cart = new ArrayList<Dish>();
 
     private Double cart_value;
+    private Double discount;
+
+    public Double getFinal_value() {
+        final_value=cart_value-discount;
+        return final_value;
+    }
+
+    public Double getDiscount() {
+        discount=cart_value*5/100;
+        return discount;
+    }
+
+    private Double final_value;
 
     private int count;
 
@@ -43,6 +59,7 @@ public class hataApp extends Application {
     public void addItem(Dish item){
         this.cart.add(item);
     }
+
 
 
 }

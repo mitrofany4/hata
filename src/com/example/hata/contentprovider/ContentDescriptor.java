@@ -21,7 +21,7 @@ import java.io.InputStream;
  * Time: 21:55
  * To change this template use File | Settings | File Templates.
  */
-public class ContentDescriptor {
+public class        ContentDescriptor {
     // utility variables
     public static final String AUTHORITY = "com.example.hata.contentprovider";
     private static final Uri BASE_URI = Uri.parse("content://" + AUTHORITY);

@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@drawable/paper_1">
+
+    <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="2"
+            android:orientation="vertical"
+            android:background="@drawable/grey_wash_wall"
+            android:layout_margin="10dp">
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Корзина пуста"
+                android:id="@+id/messageTV"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:textStyle="bold"
+                android:textSize="24sp"
+                android:textColor="#ffffff"
+                android:paddingTop="20dp"/>
+
+        <ListView
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:id="@+id/cartitems"
+                android:layout_gravity="center"
+                />
+    </LinearLayout>
+
+    <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="4"
+            android:padding="5dp">
+
+        <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Всего:"
+                android:id="@+id/textView"
+                android:layout_weight="1.5"
+                android:layout_gravity="center|left"
+                android:paddingLeft="15dp"/>
+
+        <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Large Text"
+                android:id="@+id/costTV"
+                android:layout_weight="2"
+                android:layout_gravity="center"
+                android:gravity="center_vertical|right"
+                android:paddingRight="20dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="4"
+            android:orientation="horizontal"
+            android:padding="5dp"
+            android:paddingRight="20dp">
+
+        <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Скидка 5%"
+                android:id="@+id/textView5"
+                android:layout_weight="1.5"
+                android:layout_gravity="center|left"
+                android:paddingLeft="15dp"/>
+
+        <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Large Text"
+                android:id="@+id/discountTV"
+                android:layout_gravity="center"
+                android:layout_weight="2"
+                android:gravity="center_vertical|right"
+                android:paddingRight="20dp"
+                android:textColor="#c72000"/>
+    </LinearLayout>
+
+    <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="4"
+            android:padding="5dp">
+
+        <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Итого к оплате:"
+                android:id="@+id/textView3"
+                android:layout_weight="1.5"
+                android:layout_gravity="center|left"
+                android:paddingLeft="15dp"/>
+
+        <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Large Text"
+                android:id="@+id/final_costTV"
+                android:layout_gravity="center"
+                android:layout_weight="2"
+                android:gravity="center_vertical|right"
+                android:paddingRight="20dp"
+                android:textColor="#000d8d"/>
+    </LinearLayout>
+
+    <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center"
+            android:layout_weight="4"
+            android:padding="5dp">
+
+        <Button
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Доставка"
+                android:id="@+id/button"
+                android:layout_weight="1"
+                android:padding="5dp"/>
+
+        <Button
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Самовывоз"
+                android:id="@+id/button2"
+                android:layout_weight="1"
+                android:padding="5dp"/>
+    </LinearLayout>
+
+</LinearLayout>

@@ -2,6 +2,7 @@ package com.example.hata.activities;
 
 
 import android.content.ContentResolver;
+import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 
@@ -31,7 +32,8 @@ import java.util.ArrayList;
  * To change this template use File | Settings | File Templates.
  */
 public class DishesActivity extends SherlockActivity {
-    private static final int SEARCH = 2222;
+    private static final int SEARCH = 2;
+    private static final int CART = 3;
     private MenuItemAdapter adapter;
     private ArrayList<Dish> dish_items = new ArrayList<Dish>();
     private Cursor cursor;
@@ -63,6 +65,7 @@ public class DishesActivity extends SherlockActivity {
 
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setDisplayUseLogoEnabled(false);
+
 //        setSupportProgressBarIndeterminateVisibility(true);
 
         populateDishesList(cat_name);
@@ -162,13 +165,19 @@ public class DishesActivity extends SherlockActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
 
-        menu.add(0,SEARCH,0,"Search")
+
+
+        menu.add(1,SEARCH,0,"Search")
                 .setIcon(R.drawable.searchtool_48)
 
                 .setActionView(R.layout.searchfield)
                 .setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS |
                                  MenuItem.SHOW_AS_ACTION_COLLAPSE_ACTION_VIEW);
 
+
+        menu.add(0,CART,0,"Cart")
+                .setIcon(R.drawable.cartgreen_48)
+                .setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM);
 
 
 
@@ -196,12 +205,18 @@ public class DishesActivity extends SherlockActivity {
         int itemId = item.getItemId();
         switch (itemId) {
             case android.R.id.home:
-                Toast.makeText(this, "home pressed", Toast.LENGTH_LONG).show();
+//                Toast.makeText(this, "home pressed", Toast.LENGTH_LONG).show();
                 finish();
                 break;
 
-                    }
 
+        case CART:
+                Intent intent = new Intent(DishesActivity.this, CartActivity.class);
+                finish();
+                startActivity(intent);
+                break;
+
+        }
         return true;
     }
 
